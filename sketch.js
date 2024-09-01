@@ -203,7 +203,7 @@ function preload() {
 function setup() {
   loadedLines = JSON.parse(loadedLinesStrings[0])
   loadedTwistLines = JSON.parse(loadedLinesStrings[1])
-  createCanvas(2000, 1251)
+  createCanvas(windowWidth, windowHeight)
   print('hello')
   grid = new Grid(100, 100, 30)
   document.addEventListener('contextmenu', event => event.preventDefault());
@@ -254,4 +254,8 @@ function keyPressed() {
   if (key === 'd') {
     grid.translate(-100, 0)
   }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
